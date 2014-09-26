@@ -15,7 +15,7 @@ int main (int argc, char **argv)
 { 
   if (nftw((argc < 2) ? "." : argv[1], rm, 20, FTW_DEPTH|FTW_PHYS) == -1)
   {
-      perror("nftw");
+      perror("skred");
       exit(EXIT_FAILURE);
   }
   return 0;

@@ -4,12 +4,12 @@ A utility for mass deletion of huge numbers of files.
 
 ### Usage
 
-Will recursively delete all files under this directory. Currently does not delete directories.
+Will recursively delete a directory and all files and directories under it. Does not follow symlinks.
 ```bash
 skred /path/to/target/directory/
 ```
 
-Will create 1000 dirs with 1000 files each at the cwd (for testing purposes).
+Will create 2000 dirs with 2000 files each at the cwd (for testing purposes).
 ```bash
 create
 ```

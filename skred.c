@@ -37,13 +37,6 @@ int main (int argc, char **argv)
 
 	if(sanity == 1)
 	{
-		if(path[0] != '/')
-		{
-			printf("skred: Path must be absolute\n");
-			printf("use --fuck-it-well-do-it-live to skip sanity checks at your own risk\n");
-			exit(EXIT_FAILURE);
-		}
-
 		struct stat st;
 		int err = lstat(path, &st);
 		if(-1 == err) {
@@ -69,6 +62,13 @@ int main (int argc, char **argv)
 				printf("use --fuck-it-well-do-it-live to skip sanity checks at your own risk\n");
 				exit(EXIT_FAILURE);
 			}
+		}
+		
+		if(path[0] != '/')
+		{
+			printf("skred: Path must be absolute\n");
+			printf("use --fuck-it-well-do-it-live to skip sanity checks at your own risk\n");
+			exit(EXIT_FAILURE);
 		}
 
 		char tmp[1024];
@@ -101,12 +101,13 @@ int main (int argc, char **argv)
 			exit(EXIT_FAILURE);
 		}
 	}
+	printf("skred: Purging "); printf(path); printf("\n");
 	/*
-	if (nftw((argc < 2) ? "." : argv[1], rm, 20, FTW_DEPTH|FTW_PHYS|FTW_MOUNT) == -1)
+	if (nftw(path, rm, 20, FTW_DEPTH|FTW_PHYS|FTW_MOUNT) == -1)
 	{
 			perror("skred");
 			exit(EXIT_FAILURE);
 	}
-	*/
+	**/
 	return 0;
 }

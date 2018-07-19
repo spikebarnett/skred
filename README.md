@@ -1,6 +1,6 @@
 # skred
 
-A utility for mass deletion of huge numbers of files.
+A utility for mass deletion of huge numbers of files. Was up to 8% faster than rm under certain circumstances in testing. That said, I would just use rm. rm is surely far better written and tested.
 
 ### Usage
 
